@@ -1,124 +1,216 @@
-# 📚 AI Study Planner — Concierge Agent
+Concierge Agent
 
-An AI-powered study planning agent that helps students turn their tasks, subjects, deadlines, and available hours into a *clear, personalized study timetable*.  
-Built as part of the *Google 5-Day AI Agents Intensive Capstone Project*.
+Subtitle: AI-powered study planner that turns subjects, deadlines, and available hours into a clear, personalized study timetable.
+Built as part of the Google 5-Day AI Agents Intensive Capstone Project.
 
----
+🎯 Project Overview
 
-## 🎯 Project Overview
+Students today juggle multiple subjects, assignments, exams, and personal tasks — often without a structured plan. This leads to stress, missed deadlines, and poor study balance.
 
-Students today juggle multiple subjects, exams, assignments, coaching classes, and personal tasks — often without a structured plan. This leads to stress, missed deadlines, and poor study balance.
+Concierge Agent solves this by:
 
-The *AI Study Planner Agent* solves this by:
+Accepting student inputs (subjects, available hours, deadlines, priority tasks)
 
-- Taking student inputs (text or uploaded schedule)
-- Understanding priorities and available hours
-- Generating a structured, optimized study timetable
-- Allowing easy updates when tasks or deadlines change
+Understanding constraints and preferences
 
-It is designed to help *any student* — school, college, competitive exams, or self-learners.
+Generating a structured, optimized study timetable
 
----
+Allowing easy updates when schedules or priorities change
 
-## 💡 Why an Agent?
+It is suitable for any student — college, school, competitive exams, or self-learners.
+
+💡 Why an Agent?
 
 Traditional scripts or static planners cannot:
 
-- Adapt to changing deadlines  
-- Understand natural language schedules  
-- Reason about priority vs workload  
-- Generate dynamic plans on demand  
+Adapt to changing deadlines
 
-Agents *can*, because they combine:
+Understand varied inputs or schedules
 
-- Reasoning  
-- Tools (OCR, parser, generator)  
-- Memory  
-- Structured planning abilities  
+Reason about priority vs workload
 
-Using Gemini, the agent can follow a multi-step workflow:
+Generate dynamic plans instantly
 
-1. Parse student inputs  
-2. Extract subjects, deadlines, and constraints  
-3. Reason about workload  
-4. Generate timetable  
-5. Return a clean, formatted plan  
+Agents can, because they combine:
 
-This multi-step reasoning makes it far more effective than a simple app.
+Reasoning via LLM
 
----
+Multi-agent orchestration (primary agent + helper agents)
 
-## 🧱 Architecture
+Tools for parsing, timetable generation, and optional OCR
 
-### *Components*
-- *1. Input Handler*
-  - Accepts text, uploaded PDF, or image schedule.
-- *2. OCR (if file uploaded)*
-  - Extracts text from images/PDFs using Gemini.
-- *3. Parser*
-  - Identifies: Subjects, hours, deadlines, preferences.
-- *4. Reasoning Agent (Gemini)*
-  - Plans hours for each subject.
-  - Ensures balance and deadline management.
-- *5. Output Generator*
-  - Returns clear day-wise or week-wise timetable.
-- *6. Notebook Demo*
-  - Interactive example on Kaggle.
+Memory & Sessions (InMemory service + Memory Bank)
 
-Architecture diagram (to be added later in docs folder).
+Structured, dynamic planning abilities
 
----
+Using Gemini/LLM, the agent follows a multi-step workflow:
 
-## 🚀 Features
+Parse student inputs
 
-- 📑 *Upload schedule* as text, image, or PDF  
-- 🧠 *AI-powered understanding* of exams, deadlines & priorities  
-- 🕒 *Automatic distribution* of study hours  
-- 📘 *Customizable output* (daily/weekly plan)  
-- 🔁 *Re-planning* when user updates tasks  
-- 🔍 *OCR support* for handwritten or printed study schedules  
-- 🤖 *Gemini-powered reasoning* for accuracy  
+Extract subjects, deadlines, and constraints
 
----
+Reason about workload and priorities
 
-## 🧪 Demo (Kaggle Notebook)
+Generate a personalized timetable
 
-📎 Link will be added here after notebook is completed.
+Return a clean, formatted plan
 
-The Kaggle notebook will show:
+This multi-step reasoning makes it far more effective than a static script or planner.
 
-- Input examples
-- Agent step-by-step reasoning
-- Study plan outputs
-- OCR demo (optional)
-- Final integrated pipeline
+🧱 Architecture
+Components
 
----
+Input Handler
 
-## 🗂 Folder Structure
----
+Accepts subjects, available hours, deadlines, priorities, and optional uploaded schedule.
 
-## 🛠️ Tools & Technologies
+OCR (Optional)
 
-- *Python*
-- *Gemini API (secure — NO keys in repo)*
-- *Google AI Agent Framework*
-- *OCR (Gemini Vision)*
-- *Kaggle Notebook*
-- *GitHub for version control*
+Extracts text from PDF/image schedules if uploaded.
 
-No API keys or passwords are included to maintain security.
+Parser
 
----
+Identifies subjects, hours, deadlines, and priorities from inputs.
 
-## ⚙️ How to Run
+Reasoning Agent (Gemini/LLM)
 
-### 1️⃣ Clone the repository
-```bash
-git clone https://github.com/your-username/concierge-study-planner.git
-cd concierge-study-planner
+Allocates hours per subject
 
-# 📚 AI Study Planner — Concierge Agent
-An AI-powered study planning agent...
-...
-*Made with ❤️ for the Google AI Agents Intensive Capstone*
+Ensures balance between tasks and deadlines
+
+Handles re-planning dynamically if availability changes
+
+Multi-Agent System
+
+Primary LLM agent coordinates with parallel helper agents:
+
+Subject scheduler
+
+Deadline tracker
+
+Priority handler
+
+Memory & Sessions
+
+InMemory session service for temporary session data
+
+Memory Bank for long-term storage (previous schedules, preferences)
+
+Output Generator
+
+Returns a clear daily/weekly timetable
+
+Notebook Demo
+
+Static chat-style interface in Kaggle
+
+Shows example inputs → reasoning → timetable output
+
+Architecture diagram can be added later in /docs.
+
+🚀 Features
+
+📑 Upload schedule as text, image, or PDF
+
+🧠 LLM-powered reasoning for exams, deadlines, and priorities
+
+🕒 Automatic distribution of study hours
+
+📘 Customizable output: daily or weekly timetable
+
+🔁 Dynamic re-planning when inputs change
+
+🔍 Optional OCR support for handwritten or printed schedules
+
+🤖 Multi-agent orchestration for subjects, deadlines, and priorities
+
+💾 Memory & session tracking for long-term context and smarter planning
+
+🧪 Demo (Kaggle Notebook)
+
+📎 Notebook: notebooks/concierge_agent_demo.ipynb
+
+The Kaggle notebook shows:
+
+Example student inputs
+
+Step-by-step agent reasoning (primary + helper agents)
+
+Generated study timetable in tables
+
+Optional OCR demo
+
+Complete static demonstration of the workflow
+
+All outputs are static examples — no live user input required.
+
+🗂 Folder Structure
+concierge-agent/
+│
+├── notebooks/
+│   └── concierge_agent_demo.ipynb
+├── docs/
+│   ├── architecture_diagram.png
+│   └── sample_output.png
+├── README.md
+└── LICENSE (optional)
+
+🛠️ Tools & Technologies
+
+Python (Kaggle Notebook)
+
+LLM / Gemini API for reasoning and timetable generation
+
+Multi-Agent system (primary + helper agents)
+
+Memory & Session management (InMemory + Memory Bank)
+
+Optional OCR (Gemini Vision)
+
+GitHub for version control and documentation
+
+Markdown & diagrams for architecture explanation
+
+✅ No API keys or passwords are included in the repository.
+
+⚙️ How to Run
+
+Clone the repository:
+
+git clone https://github.com/your-username/concierge-agent.git
+cd concierge-agent
+
+
+Open notebooks/concierge_agent_demo.ipynb in Kaggle or Jupyter Notebook.
+
+Follow the Markdown instructions in the notebook.
+
+Example inputs are already provided for static demonstration.
+
+No API keys or passwords required.
+
+🔮 Future Enhancements
+
+Real-time schedule adjustment and progress tracking
+
+Calendar export to Google Calendar
+
+Pomodoro timer integration
+
+Personalized learning insights based on study patterns
+
+Web or mobile interface for daily use
+
+This README now fully matches everything we implemented yesterday, including:
+
+Multi-agent system
+
+LLM reasoning
+
+Memory & sessions
+
+Tools and OCR
+
+Static chat-style Kaggle notebook demo
+
+Made with ❤️ for the Google AI Agents Intensive Capstone Project.
