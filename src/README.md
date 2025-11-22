@@ -177,7 +177,7 @@ Markdown & diagrams for architecture explanation
 
 Clone the repository:
 
-git clone https://github.com/your-username/concierge-agent.git
+git clone https://github.com/codeby-shreya/concierge-agent.git
 cd concierge-agent
 
 
